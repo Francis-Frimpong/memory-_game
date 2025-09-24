@@ -1,0 +1,124 @@
+<!--
+CSS-only Memory / Concentration Game
+- No JavaScript (user requested)
+- This version provides a clickable, animated flip-card interface using hidden checkboxes and labels.
+- Limitation: Without JavaScript we cannot automatically detect matches, keep matched pairs removed, or count score. This is a manual-play version: flip two cards to check for a match, then click again to unflip non-matching cards.
+
+How to play with this file:
+1. Open this file in your browser.
+2. Click any card to flip it (it will stay flipped). Click it again to unflip.
+3. Try to find pairs by remembering card faces.
+
+If you'd like the full automated game (matching detection, score, reset), I can add JavaScript — say the word and I'll implement it.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <div class="game-wrap">
+      <header>
+        <div>
+          <h1>Memory Game</h1>
+          <div class="subtitle">Flip cards and find matching pairs</div>
+        </div>
+        <div class="controls">
+          <div class="score">Score: 0</div>
+          <button class="reset-btn">Reset</button>
+          <div class="hint">
+            Tip: Click a card to flip it. Click again to unflip.
+          </div>
+        </div>
+      </header>
+
+      <main class="board" role="grid" aria-label="Memory board">
+        <div class="card" role="gridcell">
+          <input id="c1" type="checkbox" />
+          <label class="card-label" for="c1" tabindex="0">
+            <div class="face front">🍎</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c2" type="checkbox" />
+          <label class="card-label" for="c2" tabindex="0">
+            <div class="face front">🍌</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c3" type="checkbox" />
+          <label class="card-label" for="c3" tabindex="0">
+            <div class="face front">🍇</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c4" type="checkbox" />
+          <label class="card-label" for="c4" tabindex="0">
+            <div class="face front">🍎</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c5" type="checkbox" />
+          <label class="card-label" for="c5" tabindex="0">
+            <div class="face front">🍒</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c6" type="checkbox" />
+          <label class="card-label" for="c6" tabindex="0">
+            <div class="face front">🍌</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c7" type="checkbox" />
+          <label class="card-label" for="c7" tabindex="0">
+            <div class="face front">🍇</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+        <div class="card" role="gridcell">
+          <input id="c8" type="checkbox" />
+          <label class="card-label" for="c8" tabindex="0">
+            <div class="face front">🍒</div>
+            <div class="face back">
+              <div class="pattern">?</div>
+              <div style="font-size: 11px; opacity: 0.8">Flip</div>
+            </div>
+          </label>
+        </div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
