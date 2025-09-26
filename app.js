@@ -20,8 +20,11 @@ class MemoryGame {
     } else {
       if (this.firstPick.value === targetCard) {
         console.log("Match");
+        this.firstPick.element.disabled = true;
+        card.disabled = true;
+
         this.score++;
-        this.scoreCard.textContent = this.score;
+        this.scoreCard.textContent = `Score: ${this.score}`;
       } else {
         console.log("Not a match");
 
@@ -33,7 +36,7 @@ class MemoryGame {
           firstPickElement.checked = false;
           card.classList.remove("flipped");
           card.checked = false;
-        }, 1500);
+        }, 1000);
       }
       this.firstPick = null;
     }
@@ -45,8 +48,23 @@ class MemoryGame {
 
       [array[i], array[j]] = [array[j], array[i]];
     }
+    const board = document.querySelector(".board");
     for (const card of array) {
-      document.querySelector(".board").appendChild(card);
+      board.appendChild(card);
+      card.firstElementChild.checked = false;
+      card.firstElementChild.disabled = false;
+      card.classList.remove("flipped");
+      const input = card.querySelector("input");
+
+      input.checked = false;
+
+      input.classList.remove("flipped");
+
+      card.classList.remove("flipped");
+
+      input.disabled;
+      this.score = 0;
+      this.scoreCard.textContent = `Score: ${this.score}`;
     }
   }
 
