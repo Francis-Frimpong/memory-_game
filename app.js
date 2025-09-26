@@ -19,15 +19,12 @@ class MemoryGame {
       this.firstPick = { element: card, value: targetCard };
     } else {
       if (this.firstPick.value === targetCard) {
-        console.log("Match");
         this.firstPick.element.disabled = true;
         card.disabled = true;
 
-        this.score++;
+        this.score += 2;
         this.scoreCard.textContent = `Score: ${this.score}`;
       } else {
-        console.log("Not a match");
-
         // keep a local copy of the first card before nulling it
         const firstPickElement = this.firstPick.element;
 
@@ -36,7 +33,7 @@ class MemoryGame {
           firstPickElement.checked = false;
           card.classList.remove("flipped");
           card.checked = false;
-        }, 1000);
+        }, 800);
       }
       this.firstPick = null;
     }
@@ -53,19 +50,10 @@ class MemoryGame {
       board.appendChild(card);
       card.firstElementChild.checked = false;
       card.firstElementChild.disabled = false;
-      card.classList.remove("flipped");
-      const input = card.querySelector("input");
-
-      input.checked = false;
-
-      input.classList.remove("flipped");
-
-      card.classList.remove("flipped");
-
-      input.disabled;
-      this.score = 0;
-      this.scoreCard.textContent = `Score: ${this.score}`;
+      card.firstElementChild.classList.remove("flipped");
     }
+    this.score = 0;
+    this.scoreCard.textContent = `Score: ${this.score}`;
   }
 
   addEventListeners() {
